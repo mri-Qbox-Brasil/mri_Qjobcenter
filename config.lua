@@ -13,59 +13,60 @@ Config.Main = {
 
 Config.Jobs = {
     {
-        name = "Garbage Job",
-        image = "garbage.jpg",
+        name = "Reciclagem",
+        image = "./img/garbage.jpg",
         rank = "garbage",
-        description = "Learn more about the lowest earning job here.",
-        instructions = "A garbageman, also known as a sanitation worker, is responsible for collecting and disposing of municipal waste. Their duties include driving garbage trucks along designated routes, picking up trash bins or bags, and ensuring proper waste disposal. Garbagemen play a crucial role in maintaining public health and sanitation standards within communities.",
+        description = "Saiba mais sobre a vaga de trabalho",
+        instructions = "Um trabalhador da comunidade, também conhecido como ser humano incrível, é responsável por coletar e descartar os resíduos municipais. Suas tarefas incluem dirigir caminhões de lixo ao longo de rotas designadas, pegar lixeiras ou sacos de lixo e garantir o descarte de resíduos adequado.",
         paidActions = { "Waste Collection", "Route Efficiency", "Specialized Waste Handling", "Overtime Pay", "Public Interaction" },
-        tags = { "Driving", "Low Salary", "Lonely", }
+        tags = { "Dirigir", "Salário baixo", "Livre", }
     },
     {
-        name = "Taxi Job",
-        image = "taxi.jpg",
+        name = "Taxista",
+        image = "./img/taxi.jpg",
         rank = "taxi",
-        description = "Learn more about the lowest earning job here.",
-        instructions = "A taxi driver provides on-demand transportation services to passengers within a specific geographic area. Responsibilities include picking up passengers, navigating efficiently to destinations, and processing fares. Taxi drivers often work independently or for taxi companies, earning income through a combination of fares and tips.",
+        description = "Saiba mais sobre a vaga de trabalho",
+        instructions = "Um motorista de táxi fornece serviços de transporte sob demanda aos passageiros em uma área geográfica específica.  <br />As responsabilidades incluem pegar passageiros, navegar com eficiência para destinos e processar tarifas. ",
         paidActions = { "Passenger Transport", "Waiting Time", "Additional Services", "Peak Hour Rates", "Tips" },
-        tags = { "Driving", "Low Salary", "Lonely", }
+        tags = { "Dirigir", "Salário baixo", "Livre", }
     },
     {
-        name = "Truck Job",
-        image = "trucking.png",
+        name = "Motorista de Caminhão",
+        image = "./img/trucking.png",
         rank = "trucker",
-        description = "Learn more about the lowest earning job here.",
-        instructions = "A trucker, also known as a truck driver, operates commercial vehicles to transport goods over long distances, ensuring timely and safe delivery. Responsibilities include navigating routes, adhering to traffic regulations, and maintaining the vehicle. Truckers play a crucial role in the logistics and transportation industry.",
+        description = "Saiba mais sobre a vaga de trabalho",
+        instructions = "Um caminhoneiro, também conhecido como motorista de caminhão, opera veículos comerciais para transportar mercadorias a longas distâncias, garantindo uma entrega oportuna e segura.",
         paidActions = { "Freight Transportation", "Loading and Unloading", "Adherence to Schedule", "Specialized Skills Pay", "Overtime Pay" },
-        tags = { "Driving", "Low Salary", "Lonely", }
+        tags = { "Dirigir", "Salário baixo", "Livre", }
     },
 }
 
-Config.Licenses = {
-    {
-        name = "ID Card",
-        image = "idcard.png",
-        price = 50,
-        item = "id_card",
-    },
-    {
-        name = "Driver's License",
-        image = "driverslicense.png",
-        price = 500,
-        item = "driver_license",
-        description = "A driver's license is required to operate a motor vehicle.",
-    },
-    {
-        name = "Firearm's License",
-        image = "firearmslicense.png",
-        price = 5000,
-        item = "weaponlicense",
-        description = "A firearms license is required to purchase a firearm from Ammunation.",
-    },
-}
+-- Config.Licenses = {
+--     {
+--         name = "Carteira de identidade",
+--         image = "idcard.png",
+--         price = 50,
+--         item = "id_card",
+--         description = "Uma carteira de identidade é necessária para se identificar legalmente.",
+--     },
+--     {
+--         name = "Carteira de motorista",
+--         image = "driverslicense.png",
+--         price = 500,
+--         item = "driver_license",
+--         description = "Uma carteira de motorista é obrigada a operar um veículo a motor.",
+--     },
+--     {
+--         name = "Porte de Armas",
+--         image = "firearmslicense.png",
+--         price = 5000,
+--         item = "weaponlicense",
+--         description = "O porte de armas, necessário possuir um para poder legalizar sua arma.",
+--     },
+-- }
 
 Config.tagColors = {
-    "bg-green-300",
-    "bg-rose-400",
-    "bg-orange-200"
+    "bg-emerald-400",
+    "bg-cyan-400",
+    "bg-orange-400"
 }

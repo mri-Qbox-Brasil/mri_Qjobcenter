@@ -22,14 +22,14 @@ RegisterNetEvent('ss-jobcenter:client:setup', function(cfg)
                         type = 'server',
                         event = 'ss-jobcenter:server:openJobCenter',
                         icon = "fas fa-briefcase",
-                        label = "Job Center",
+                        label = "Central de Trabalho",
                     },
                 },
                 distance = 1.5,
             })
         elseif Config.useTarget == 'ox' then
             local params = {
-                label = "Job Center",
+                label = "Central de Trabalho",
                 name = "jobcenter",
                 icon = "fas fa-briefcase",
                 iconColor = "#ffffff",

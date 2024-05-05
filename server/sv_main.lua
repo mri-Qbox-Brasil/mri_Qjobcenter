@@ -1,4 +1,5 @@
 QBCore = exports['qb-core']:GetCoreObject()
+jobname = nil
 
 RegisterNetEvent('ss-jobcenter:server:openJobCenter', function()
     local source = source
@@ -23,6 +24,7 @@ RegisterNetEvent('ss-jobcenter:server:select', function(data)
 
                 for _, job in pairs(Config.Jobs) do
                     if job.rank == data.job then
+                        jobname = job.name
                         jobExists = true
                         break
                     end
@@ -30,9 +32,9 @@ RegisterNetEvent('ss-jobcenter:server:select', function(data)
 
                 if jobExists then
                     Player.Functions.SetJob(data.job, 0)
-                    TriggerClientEvent('QBCore:Notify', source, 'You are now a ' .. data.job .. '!', 'success')
+                    TriggerClientEvent('QBCore:Notify', source, 'Você foi contratado: ' .. jobname .. '!', 'success')
                 else
-                    TriggerClientEvent('QBCore:Notify', source, 'This job does not exist!', 'error')
+                    TriggerClientEvent('QBCore:Notify', source, 'Estamos sem vaga no momento!', 'error')
                 end
             elseif data.type == 'license' then
                 local licenseExists = false
@@ -80,16 +82,16 @@ RegisterNetEvent('ss-jobcenter:server:select', function(data)
 
                         Player.Functions.AddItem(license.item, 1, nil, info)
                         TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items[license.item], 'add')
-                        TriggerClientEvent('QBCore:Notify', source, 'You have purchased a ' .. license.name .. '!', 'success')
+                        TriggerClientEvent('QBCore:Notify', source, 'Você comprou uma ' .. license.name .. '!', 'success')
                     else
-                        TriggerClientEvent('QBCore:Notify', source, 'You do not have enough money!', 'error')
+                        TriggerClientEvent('QBCore:Notify', source, 'Você não tem dinheiro suficiente!', 'error')
                     end
                 else
-                    TriggerClientEvent('QBCore:Notify', source, 'WRONG? CONTACT ADMIN', 'error')
+                    TriggerClientEvent('QBCore:Notify', source, 'Contate a administração.', 'error')
                 end
             end
         else
-            TriggerClientEvent('QBCore:Notify', source, 'You are not at the job center!', 'error')
+            TriggerClientEvent('QBCore:Notify', source, 'Você não está no centro de emprego!', 'error')
         end
     end
 end)
