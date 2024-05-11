@@ -6,7 +6,7 @@ Config.Main = {
         ["jobcenter"] = {
             coords = vector4(-269.19, -956.09, 31.22, 206.34),
             model = "s_m_m_armoured_01",
-            blip = { sprite = 407, color = 4, scale = 0.7, label = "Job Center" },
+            blip = { toggle = false, sprite = 407, color = 4, scale = 0.7, label = "Job Center" },
         },
     }
 }

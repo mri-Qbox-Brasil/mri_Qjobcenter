@@ -60,15 +60,17 @@ RegisterNetEvent('ss-jobcenter:client:setup', function(cfg)
             zones[#zones + 1] = zone
         end
 
+        if v.blip.toggle == true then
         local blip = AddBlipForCoord(v.coords.x, v.coords.y, v.coords.z)
-        SetBlipSprite(blip, 407)
-        SetBlipDisplay(blip, 4)
-        SetBlipScale(blip, 0.7)
-        SetBlipColour(blip, 0)
-        SetBlipAsShortRange(blip, true)
-        BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString("Job Center")
-        EndTextCommandSetBlipName(blip)
+            SetBlipSprite(blip, 407)
+            SetBlipDisplay(blip, 4)
+            SetBlipScale(blip, 0.7)
+            SetBlipColour(blip, 0)
+            SetBlipAsShortRange(blip, true)
+            BeginTextCommandSetBlipName("STRING")
+            AddTextComponentString("Job Center")
+            EndTextCommandSetBlipName(blip)
+        end
     end
 end)
 
