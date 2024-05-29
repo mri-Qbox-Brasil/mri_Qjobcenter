@@ -25,7 +25,8 @@ window.addEventListener('message', function(event) {
                         </ul>
                     </div>
                     <p class="overflow-hidden mt-5 text-gray-500 font-semibold text-sm">Se você se interessar nessa vaga de trabalho, clique abaixo!</p>
-                    <button type="button" class="mt-2 rounded-md border-gray-700 bg-green-900 px-4 py-2 text-center text-sm font-medium text-white transition-all hover:bg-green-700 focus:ring focus:ring-gray-200 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 start-working-button" onclick="startJob(&quot;job&quot;, ${jobKey})">Inscrever-se</button>
+                    ${job.toggleDuty ? `<button type="button" class="mt-2 rounded-md border-gray-700 bg-green-600 px-4 py-2 text-center text-sm font-medium text-white transition-all hover:bg-green-500 focus:ring focus:ring-gray-200 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 start-working-button" onclick="startJob(&quot;job&quot;, ${jobKey})">Trabalhar</button>` : ''}
+                    <button type="button" class="mt-2 rounded-md border-gray-700 bg-green-600 px-4 py-2 text-center text-sm font-medium text-white transition-all hover:bg-green-500 focus:ring focus:ring-gray-200 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 start-working-button" onclick="startJob(&quot;loc&quot;, ${jobKey})">Localizar</button>
                     <div class="mt-4 flex gap-2">
                         ${job.tags.map((tag, index) => `<span class="inline-flex items-center gap-1 rounded-md ${config.tagColors[index]} px-2 py-1 text-xs font-bold text-stone-800">${tag}</span>`).join('')}
                     </div>

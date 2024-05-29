@@ -14,6 +14,7 @@ RegisterNetEvent('ss-jobcenter:server:select', function(data)
     local source = source
     local Player = QBCore.Functions.GetPlayer(source)
     local playerCoords = GetEntityCoords(GetPlayerPed(source))
+    local lastcoord = nil
 
     for _, location in pairs(Config.Main.Locations) do
         local distance = #(playerCoords - vector3(location.coords.x, location.coords.y, location.coords.z))
@@ -35,6 +36,38 @@ RegisterNetEvent('ss-jobcenter:server:select', function(data)
                     TriggerClientEvent('QBCore:Notify', source, 'Você foi contratado: ' .. jobname .. '!', 'success')
                 else
                     TriggerClientEvent('QBCore:Notify', source, 'Estamos sem vaga no momento!', 'error')
+                end
+
+            elseif data.type == 'loc' then
+                local jobExists = false
+
+                for _, job in pairs(Config.Jobs) do
+                    if job.rank == data.job then
+                        jobname = job.name
+                        jobExists = true
+                        lastcoord = job.location
+                        break
+                    end
+                end
+
+                if jobExists then
+                    -- exports["pickle_waypoints"]:addWaypoint(source, jobname, lastcoord, {
+                    --     -- icon = "default", -- or "default" to use internal icon for color support.
+                    --     color = {255, 255, 255, 100}, -- rgba value, used for internal icon and marker.
+                    --     clearEnter = true, -- Upon entering the area, remove the waypoint.
+                    --     blipId = 1, -- Display waypoint on map, or set to nil to disable.
+                    --     blipColor = 0, -- Blip color on the map.
+                    -- })
+                    TriggerClientEvent("pickle_waypoints:addWaypoint", source, jobname, lastcoord, {
+                        -- icon = "default", -- or "default" to use internal icon for color support.
+                        color = {100, 255, 100, 100}, -- rgba value, used for internal icon and marker.
+                        clearEnter = true, -- Upon entering the area, remove the waypoint.
+                        blipId = 304, -- Display waypoint on map, or set to nil to disable.
+                        blipColor = 5, -- Blip color on the map.
+                    })
+                    TriggerClientEvent('QBCore:Notify', source, 'A localização foi marcada: ' .. jobname .. '!', 'success')
+                else
+                    TriggerClientEvent('QBCore:Notify', source, 'Indisponível no momento', 'error')
                 end
             elseif data.type == 'license' then
                 local licenseExists = false
