@@ -60,7 +60,7 @@ Config.Jobs = {
         description = "Saiba mais sobre a vaga de trabalho",
         instructions = "Um pescador trabalha em corpos d'água para capturar peixes e outros frutos do mar. As responsabilidades incluem operar barcos e equipamentos de pesca, identificar locais de pesca produtivos e processar e vender o pescado.",
         paidActions = { "Pesca", "Operação de Barcos", "Processamento da Captura", "Venda de Recursos", "Manutenção de Equipamentos" },
-        location = vec3(-1774.0654, -1796.2740, 20.0),
+        location = vec3(-1492.99, -939.66, 10.21),
         tags = { "Ao ar livre", "Salário variável", "Livre", }
     },
     {
@@ -81,7 +81,17 @@ Config.Jobs = {
         instructions = "Um transportador é responsável por mover mercadorias de um local para outro. As responsabilidades incluem carregar e descarregar cargas, dirigir veículos de transporte, e garantir que as mercadorias cheguem ao destino em boas condições.",
         paidActions = { "Carregamento de Cargas", "Direção de Transporte", "Planejamento de Rotas", "Conclusão de Entrega", "Manuseio de Mercadorias Especiais" },
         location = vec3(-413.96, 6171.53, 30.48),
-        tags = { "Dirigir", "Logística", "Livre", }
+        tags = { "Motorista", "Dirigir", "Logística", "Livre", }
+    },
+    {
+        name = "Caminhoneiro",
+        image = "./img/truckeroil.jpg",
+        rank = "truckeroil",
+        description = "Saiba mais sobre a vaga de trabalho",
+        instructions = "Um caminhoneiro é responsável por manter os estoques de combustível cheios na cidade. As responsabilidades incluem abastecer e reabastecer postos de gasolina, dirigir caminhões, e garantir que o combustível chegue ao destino em boas condições.",
+        paidActions = { "Carregamento de Cargas", "Transporte rápido", "Caminhões" },
+        location = vec3(1721.87, -1557.67, 112.65),
+        tags = { "Motorista", "Dirigir", "Logística", "Livre", }
     },    
     -- {
     --     name = "Motorista de Caminhão",
